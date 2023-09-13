@@ -1,0 +1,44 @@
+----
+projeye LİB EKLEME
+
+1- dosyayı bilgisayarına indir ve yükle
+2- mavendan o anda istekte bulun yüklesin.
+3- projeninin içinde bir dosya olsaydı
+   oraya gereklş bağımlılıklar yani libler
+   ismini versiyonun yazsdaydık
+   kendisi otomatik indirseydi,
+   projeyi başkasına verince de , alan kişi
+   sadece bu dosyadakileri yükle desyedi
+
+maven : proje yönetim modülü
+Locatorları yazdığımız PAGE OBJECT MODEL : POM
+Bağımlılıkların LİB lerin içine yazıldığı dosya
+                    PROJECT OBJECT MODEL : POM
+
+
+1- Yeni projeye tıklattım-> Proje Tipi olarak MAVEN
+   seçildi.satandart sonlandırıldı.
+
+2- Klasör yapısını inceledik:
+   main -> Developer ın source kodları
+   test -> Testerın kodları
+
+3- Mavenın verdiği düzenli yapının kendi tarafımızda ,
+   bizde kendi düzenli klasör yapımızı oluşturacağız.
+   Klasörler
+
+   FeatureFiles   -> Senaryolarımızın olduğu klasör
+   StepDefinitions-> Senaryoların çalışan adımları - metodları burada olacak
+   Pages          -> Page Object Modell sayfalarımız POM (@FindBy)
+   Utilities      -> Driver ve diğer tekrar kullanılacak metodlarımız
+   Runners        -> Çalıştırıcılar
+
+
+   3- Ayarlar (file-setting-plugin)
+      A) Intellij Editör ayarları
+         2 tane Plugin ekleyeceğiz
+           1- Cucumber for Java
+           2- Gherkin Language  -> https://cucumber.io/docs/gherkin/reference/#keywords
+
+           Gherkin formati : herkesin anlayacagi dil mesela ben turkce yazarim baskasi lehce gibi..
+           formata gore yazmamizi sagliyor yukardaki linkten bakabiliriz.
