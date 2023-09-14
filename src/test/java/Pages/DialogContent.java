@@ -14,10 +14,10 @@ import org.testng.Assert;
 import java.time.Duration;
 
 //campusun sag tarafi
-public class DialogContent extends Parent{ //extend Parent yaptik cunku Dialog Content onlari icersin ve Dialog Contentten
+public class DialogContent extends Parent { //extend Parent yaptik cunku Dialog Content onlari icersin ve Dialog Contentten
     //nesne urettigimiz zaman (LoginSteps'de) taniyor.
     public DialogContent() {
-        PageFactory.initElements(GWD.getDriver(),this);
+        PageFactory.initElements(GWD.getDriver(), this);
     }
 
     @FindBy(css = "input[formcontrolname='username']")
@@ -41,14 +41,35 @@ public class DialogContent extends Parent{ //extend Parent yaptik cunku Dialog C
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     public WebElement nameInput;
 
-    @FindBy(css = "//ms-text-field[@formcontrolname='code' ]//input")
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='code' ]//input")
     public WebElement codeInput;
 
-    @FindBy(css = "//ms-save-button/button")
+    @FindBy(xpath = "//ms-save-button/button")
     public WebElement saveButton;
-    @FindBy(css = "//div[contains(text(),'successfully')]")
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMessage;
 
+    @FindBy(xpath = "//ms-text-field[contains(@formcontrolname,'shortName')]//input")
+    public WebElement shortName;
 
+    @FindBy(xpath = "//div[contains(text(),'Citizenship successfully created')]")
+    public WebElement successMessagecitizenship;
 
+    @FindBy(xpath = "//dynamic-view[@class='ng-star-inserted']//div")
+    public WebElement alreadyMsg;
+//The Citizenship with Name "sln123" already exists.
+
+    //(//button[@class='mat-mdc-tooltip-trigger mdc-icon-button mat-mdc-icon-button mat-unthemed mat-mdc-button-base'])[2]
+
+    @FindBy(xpath = "(//button[@class='mat-mdc-tooltip-trigger mdc-icon-button mat-mdc-icon-button mat-unthemed mat-mdc-button-base ng-star-inserted'])")
+    public WebElement maximizeButton;
+
+    @FindBy(xpath = "(//button[@class='mat-mdc-tooltip-trigger mdc-icon-button mat-mdc-icon-button mat-unthemed mat-mdc-button-base'])[2]")
+    public WebElement closeButton;
+
+    @FindBy(xpath = "(//button[@class='mdc-button mat-mdc-button mat-accent mat-flat-button mat-mdc-button-base'])")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "(//button[@class='mat-mdc-tooltip-trigger mdc-icon-button mat-mdc-icon-button mat-warn mat-mdc-button-base ng-star-inserted'])[1]")
+    public WebElement deleteButton;
 }

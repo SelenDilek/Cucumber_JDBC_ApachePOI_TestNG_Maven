@@ -10,14 +10,17 @@ public class LeftNav extends Parent { //campusun sol tarafi
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
-    @FindBy(css = "(//span[text()='Setup'])[1]")
+    @FindBy(xpath = "(//span[text()='Setup'])[1]")
     public WebElement setup;
 
-    @FindBy(css = "//span[text()='Parameters']")
+    @FindBy(xpath = "//span[text()='Parameters']")
     public WebElement parameters;
 
-    @FindBy(css = "(//span[text()='Countries'])[1]")
+    @FindBy(xpath = "(//span[text()='Countries'])[1]")
     public WebElement countries;
+
+    @FindBy(xpath = "//span[text()='Citizenships']")
+    public WebElement citizenship;
 
 
 

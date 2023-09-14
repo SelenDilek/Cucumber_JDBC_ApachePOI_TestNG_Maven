@@ -46,4 +46,6 @@ public class Parent {
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
 
     }
+
+
 }
