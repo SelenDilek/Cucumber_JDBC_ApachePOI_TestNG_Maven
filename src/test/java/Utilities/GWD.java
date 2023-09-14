@@ -19,7 +19,6 @@ public class GWD { //cucumberda fonksiyonlar her yerde oldugu icin getdriver ile
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-
         }
         return driver;
     }
