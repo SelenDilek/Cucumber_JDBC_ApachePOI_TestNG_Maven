@@ -22,6 +22,29 @@ public class LeftNav extends Parent { //campusun sol tarafi
     @FindBy(xpath = "//span[text()='Citizenships']")
     public WebElement citizenship;
 
+    //DataTable icin ben buraya kelime halini yani string yollayacam geriye bana web element gonderecek.
+
+    public WebElement getWebEelement(String strElement){
+
+        //return oldugu icin break koymaya gerek yok zaten direkt gidiyor. geri donuyor cikiyor donguden.
+
+        switch (strElement){
+
+            case "setup" : return this.setup;
+            case "parameters" : return this.setup;
+            case "countries" : return this.setup;
+            case "citizenship" : return this.setup;
+
+        }
+
+
+        return null ; // eger ki bir sey gelmezse donus olarak null gonder.
+
+
+    }
+
+
+
 
 
 

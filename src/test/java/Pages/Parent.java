@@ -2,7 +2,9 @@ package Pages;
 
 import Utilities.GWD;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -10,7 +12,7 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class Parent {
-    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+   public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20)); //public olmazsa diger paketlerden erisim olmaz.
     public void myClick(WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
@@ -32,6 +34,8 @@ public class Parent {
 //        clear yap
 //        yazıyı gönder
 
+
+
     }
 
     public  void scrollToElement(WebElement element){
@@ -44,6 +48,9 @@ public class Parent {
 
         wait.until(ExpectedConditions.textToBePresentInElement(element,value));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
+        //action la ESC ye basarak acik kutu veya mesaj var ise kapat.
+        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform(); //bu kismi delete islemi yaparken cikan mesaj kutusunu kapatip isleme
+        //devam etmek icin kullandik. basari ile olusturdu yazisindan sonraki islemde ekranda kaliyor kutu.
 
     }
 

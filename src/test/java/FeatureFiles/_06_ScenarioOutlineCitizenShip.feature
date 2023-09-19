@@ -12,6 +12,7 @@ Feature: CitizenShip Functionality
     Then User should login successfully
     And Navigate to citizenship
 
+    #dataProvider gibi
     Scenario Outline: Create a Citizenship
       When Create a Citizenship name as "<name>" short name as "<shortname>"
       Then Success message should be display
