@@ -1,0 +1,59 @@
+Eger ki feature file icinde calistirinca kirmizliklar gitmiyorsa run editconfirutaion projeyi sil sonra tekrar calistir ve
+<scope> test </scope> bunu pomdaki io cucumber icine yapistir (cunku ucunun de ayni formatta olmasi gerekiyor surum farkliliklarindan dolayi)
+testng,cucumber,cucumberjava icin version altina <scope> test </scope> yapistirdik feature file tekrar calistirilir.
+
+Not : pom exml de degisiklik yapilinca reload yapilir.
+
+//hangi sirada yazdiysan o sirada featurefile den calistirinca ekranda gozukur.
+
+//Share your Cucumber Report with your team at team and Disable this message with one of the following: kismi gozukmesin
+diye recorse dosya olustur yaptistir. test in altina directory ac icine resorce yaz recorse icine file olustur ve cucumber.properties yaz
+icine quite=true olan yasil kismi yapistir.
+
+//driver a ihtiyacim var o yuzden onu olusturmam lazim. Testng den farkli olarak driveri alacagiz.Testng de olusturduk ve
+classlara extends ettik (inheritance) fonksiyon gibi kullanacam cunku her yerde kullanbilmek icin. utilites-GWD(genel web driver)
+
+//driver==null yapmazsak iki sayfa acar iki ayri driver calistirir. Bossa bana driver i tekrardan ver demek lazim.(driver==null)
+
+//calistirinca SLF4J cikti bunun icin POM xml e bunu yapistir : <dependency>
+//SLF4J uyari versiyondan dolayi cikiyor                                                   <groupId>org.slf4j</groupId>
+                                                    <artifactId>slf4j-api</artifactId>
+                                                    <version>1.8.0-beta2</version>
+                                                </dependency>
+
+                                                <dependency>
+                                                    <groupId>org.slf4j</groupId>
+                                                    <artifactId>slf4j-simple</artifactId>
+                                                    <version>1.8.0-beta2</version>
+                                                    <scope>test</scope>
+                                                </dependency>
+
+//sonra GWD ye quit eklememiz lazim.(Bekle Kapat yok) bu olusturduklarimiz bizim frameworkumuz
+//bekle method ile olusturulur. ilk bi bekleme koyariz if(driver != null) ise kapat ve driver i bosta birak ki digerleri
+de calisabilsin (en son driver=null olmali yoksa kapatir diger fonk. calismaz)
+
+//cucumber in testng kadar annotions yok cunku ihtiyaci yok o yuzden ihtiyac olan kismi testNG den kullanir. Lazim olan sey
+senerio bitti veya basladi annotions i lazim. cunku driverclose methodunun bilmesi gerekiyor islemlerim bittigini sonra kapatacak.
+(before , after) hook kullanilir yani kanca --> stepdef. icine hooks class acilir. before methodu io cucumberdan alinir.
+
+//hooks veya step def. class larini bir yere tanimlamama gerek yok cucumber otomatik baglanti kuruyor. sadece yazdiktan sonra
+feature den calistir.(before ve after annotionslari icin)
+
+//Sonra elementleri bulmak icin Page Object Model olusturulmus zaten icine yaziyoruz Page klasorun icinde
+//gruplama yapmak lazim faydasi var reusability , birden fazla sayfalarda ayni element ile islem yaparsak tekrar tekrar tanimlamaya
+gerek yok.
+
+//siteye once bi gidilir techno.mersies olana bi kesif yapilir neleri kullanacaz. sitede ayni islemler olunca mesela name bilgisi
+o yuzden pom. tek bir yerde topluyor ki tekrar tekrar locator bulunmamiza gerek kalmasin.
+
+//  @FindBy(css = "")
+      public WebElement password; bu sekilde pom icinde olusturmaya baslanir developer ile beraber ilerlemis oluruz.sonra
+      bilgiler step def.e yazilmaya baslar.
+
+//id="mat-input-33" bundan kacin bu dinamik degisebilir. her zaman sabit olan bir locator almaya calisacaz.
+
+//sayfayi acti sendKeys yapmaya calisti hata aldik bulamadi elementi. Bekletmemiz lazim. nosuchaselement hatasi icin.o yuzden
+pom icine method olusturup oyle elementi kullandik (click v.s)
+
+//developer a ihtiyac olmadan ben framework u hazirlarim.
+//daha once yazdigim feature file daki stepleri diger yerlerde kullanabilirim. (Navigate to Campus)
