@@ -1,0 +1,64 @@
+ExtendReport Islemler
+https://www.programsbuzz.com/ -> raporlar icin ->testNG yi buluyoruz. en altlarda ->Cucumber TestNG: Generate Extent Report
+ //https://www.programsbuzz.com/article/cucumber-testng-generate-extent-report-using-extent-adapter-grasshopper
+
+1. POM a ilgili dependency eklenir (1.9.2 en gunceli)
+ <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.9.2</version>
+        </dependency>
+
+
+2-RunnerClass a plugin eklendi
+
+plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+
+
+3- extetent.properties dosyası resources klasörünün
+altına açılarak aşağıdaki 2 satır eklendi.
+
+extent.reporter.spark.start=true
+extent.reporter.spark.out=test-output/SparkReport/Spark.html
+
+4-  extend report türkçe bilgi çalışmaması sebebiyle kondu
+     public static WebDriver getDriver() {
+           Locale.setDefault(new Locale("EN"));
+           System.setProperty("user.language", "EN");
+
+5. her calistirdigimiz rapor ayri ayri tarihleriyle kaydedilsin diye yapilacak islemler : yoksa aynen uzerine yazip eskisini siliyor.
+properties e bu eklenir : (extendsreport.resorces)
+Her raporun ayrı olması için
+   Aşağıdaki kodu extent.properties e ekliyoruz
+
+       #FolderName
+       basefolder.name=Test Reports/TestReport
+       basefolder.datetimepattern=d-MMM-YY HH.mm.ss
+
+6- Rapora Screenshot eklenmesi için
+https://www.programsbuzz.com/article/how-add-screenshot-cucumber-extent-report-every-step
+https://qaautomation.expert/2022/08/10/how-to-add-screenshot-to-cucumber-extentreports/
+
+   a) Hooks a aşağıdaki eklendi
+
+      if (senaryo.isFailed()){
+            TakesScreenshot ts=((TakesScreenshot) GWD.getDriver());
+            byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
+            senaryo.attach(hafizadakiHali, "image/png", "screenshot name");
+        }
+
+  b) extends.properties e aşağıdaki bölüm eklendi
+    #screenshot folder and src settings
+    screenshot.dir=test-output/screenshots/
+    screenshot.rel.path=../screenshots/
+
+    7-  PDF Report için gerekli işlem
+    https://www.programsbuzz.com/article/extent-pdf-report-cucumber-testng
+
+    extends.properties e aşağıdaki bölüm eklendi
+
+                #PDF Report
+                extent.reporter.pdf.start=true
+                extent.reporter.pdf.out=PdfReport.pdf
+
+    8- Extend reportun detyali icin Runner daki class in icine bilgiler eklenir. Hangi isletim sistemi,sone,saat,kim yapti v.s

@@ -22,34 +22,56 @@ public class LeftNav extends Parent { //campusun sol tarafi
     @FindBy(xpath = "//span[text()='Citizenships']")
     public WebElement citizenship;
 
+    @FindBy(xpath = "//span[text()='Nationalities']")
+    public WebElement nationalities;
+
+    @FindBy(xpath = "//span[text()='Fees']")
+    public WebElement fees;
+
+    @FindBy(xpath = "(//span[text()='Entrance Exams'])[1]")
+    public WebElement entranceExams;
+
+    @FindBy(xpath = "(//span[text()='Entrance Exams'])[2]")
+    public WebElement entranceExams2;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[2]")
+    public WebElement setup2;
+
+    //Entrance Exams
     //DataTable icin ben buraya kelime halini yani string yollayacam geriye bana web element gonderecek.
 
-    public WebElement getWebEelement(String strElement){
+    public WebElement getWebEelement(String strElement) {
 
         //return oldugu icin break koymaya gerek yok zaten direkt gidiyor. geri donuyor cikiyor donguden.
 
-        switch (strElement){
+        switch (strElement) {
 
-            case "setup" : return this.setup;
-            case "parameters" : return this.setup;
-            case "countries" : return this.setup;
-            case "citizenship" : return this.setup;
+            case "setup":
+                return this.setup;
+            case "parameters":
+                return this.parameters;
+            case "countries":
+                return this.countries;
+            case "citizenship":
+                return this.citizenship;
+            case "nationalities":
+                return this.nationalities;
+            case "fees":
+                return this.fees;
+            case "entranceExams":
+                return this.entranceExams;
+            case "entranceExams2":
+                return this.entranceExams2;
+            case "setup2":
+                return this.setup2;
 
         }
 
 
-        return null ; // eger ki bir sey gelmezse donus olarak null gonder.
+        return null; // eger ki bir sey gelmezse donus olarak null gonder.
 
 
     }
-
-
-
-
-
-
-
-
 
 
 }

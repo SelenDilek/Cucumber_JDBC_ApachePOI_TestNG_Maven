@@ -5,6 +5,8 @@
   #asagidaki yazilar kahverengi sonradan beyaz oluyor cunku step def.e eklememizi istiyor.
 
 Feature: Login functionality
+
+  @SmokeTest
   Scenario: Login with valid usurname and password
     Given Navigate to campus
     When  Enter usurname and password and click login button

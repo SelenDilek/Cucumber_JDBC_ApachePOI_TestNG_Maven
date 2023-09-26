@@ -20,7 +20,7 @@ public class _08_DataTableOrnek {
     }
 
     @And("Write usurname as DataTable")
-    public void writeUsurnameAsDataTable(DataTable userlar) { //ben bunlari DataTable formtinda aliyorum.
+    public void writeUsurnameAsDataTable(DataTable userlar) { //ben bunlari DataTable formtinda aliyorum.yani string turu.
        List<String> listUserlar =userlar.asList(String.class);
        for(String user : listUserlar){
 

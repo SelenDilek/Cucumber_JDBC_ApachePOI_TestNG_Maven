@@ -1,0 +1,37 @@
+-------------
+driverı paralel çalışacak hale getirdik
+paralel çalışmamızı sağlayan XML i kullandık.
+
+her driverı çağıran yeni drivır mı alıyordu,
+
+paralel çalışmada her bir paralel süreç ayrı bir hat
+şeklind eçalışır. yani ayrı boru hatları gibi, aynı anda
+çalışan.
+
+ayrı çalışan her bir boru hattına : pipeline : thread
+
+Thread.Sleep(5000) -> bulunduğum boru hattını beklet
+
+böylece her boru hattına ayrı bir driver oldu, extend şekli ile
+
+Cucumberda süreçler içerisinde driver static olmak zorunda
+hem static olacak hemde her boru hattına özel olacak
+static boru hatlarının kendine özel static olacak
+
+thread static : boru hattına özel static : thread local static
+thread in kendine özel static.: threadin bi tanesi
+
+static  ThreadLocal<WebDriver> : thread in local static Driverı
+               List<WebDriver>
+
+
+
+
+               private static ThreadLocal<WebDriver> threadDriver=new ThreadLocal<>();
+                   public static ThreadLocal<String> threadBrowserName=new ThreadLocal<>();
+               //threadDriver.get() -> bulunduğum thread deki driver ı al
+                   //threadDriver.set(driver) -> bulunduğum threade driver set et
+
+
+
+                   not : xml i sadece paralel test icin kullaniyoruz yoksa runner bize yeterli.

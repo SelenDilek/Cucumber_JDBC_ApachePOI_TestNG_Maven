@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 //campusun sag tarafi
 public class DialogContent extends Parent { //extend Parent yaptik cunku Dialog Content onlari icersin ve Dialog Contentten
@@ -47,6 +48,10 @@ public class DialogContent extends Parent { //extend Parent yaptik cunku Dialog 
 
     @FindBy(xpath = "//ms-save-button/button")
     public WebElement saveButton;
+
+    @FindBy(xpath = "(//ms-save-button/button)[1]")
+    public WebElement saveButton1;
+
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMessage;
 
@@ -59,7 +64,7 @@ public class DialogContent extends Parent { //extend Parent yaptik cunku Dialog 
     @FindBy(xpath = "//dynamic-view[@class='ng-star-inserted']//div")
     public WebElement alreadyMsg;
 
-    @FindBy(xpath = "//ms-text-field[contains(@placeholder,'NAME')]//input[@data-placeholder='Name']")
+    @FindBy(xpath = "//mat-form-field//input[@data-placeholder='Name']")
     public WebElement searchInput;
     @FindBy(xpath = "//ms-search-button//button")
     public WebElement searchButton;
@@ -69,6 +74,54 @@ public class DialogContent extends Parent { //extend Parent yaptik cunku Dialog 
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement deleteDialogBtn;
+
+    //
+
+    @FindBy(xpath = "//ms-text-field//input[@data-placeholder='Integration Code']")
+    public WebElement integrationCode;
+
+    @FindBy(xpath = "//ms-integer-field//input[@data-placeholder='Priority']")
+    public WebElement priorty;
+
+    @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']")
+    public WebElement toggleBar; //active check button
+
+    //
+    @FindBy(xpath = "//mat-select//span[text()='Academic Period']")
+    public WebElement acedemicPeriyod;
+
+    @FindBy(xpath = "//mat-option/span")
+    public List<WebElement> acedemicPeriyodselect;
+
+    ////mat-option[@aria-selected='false']
+    //
+    @FindBy(xpath = "(//span[text()='Grade Level'])[1]")
+    public WebElement gradeLevel;
+
+    @FindBy(xpath = "(//*[@role='option'])[4]")
+    public List<WebElement> gradeLevelSelect;
+
+    @FindBy(xpath = "(//input[@formcontrolname='date'])[1]")
+    public WebElement regStart;
+
+    @FindBy(xpath = "(//input[@formcontrolname='date'])[2]")
+    public WebElement regEnd;
+
+    @FindBy(xpath = "//*[@id=\"container-2\"]/footer/exam-form-buttons/button-bar/div/div[2]/ms-delete-button/button")
+    public WebElement deleteButton;
+    @FindBy(xpath = "//*[@id=\"mat-mdc-dialog-2\"]/div/div/app-simple-dialog/mat-dialog-actions/div/div/button[2]")
+    public WebElement deleteButton2;
+
+    @FindBy(xpath="//mat-select//span[text()='Test 2024']")
+    public WebElement searchAcademicPeriod;
+
+
+
+
+
+
+
+
 
 
     // silme ıslemı dıalogların ortak noktası olması sebebıyle buraya aldık.
@@ -140,6 +193,24 @@ public class DialogContent extends Parent { //extend Parent yaptik cunku Dialog 
                 return this.deleteImageBtn;
             case "deleteDialogBtn":
                 return this.deleteDialogBtn;
+            case "integrationCode":
+                return this.integrationCode;
+            case "priorty":
+                return this.priorty;
+            case "toggleBar":
+                return this.toggleBar;
+            case "acedemicPeriyod":
+                return this.acedemicPeriyod;
+            case "gradeLevel":
+                return this.gradeLevel;
+            case "regStart":
+                return this.regStart;
+            case "regEnd":
+                return this.regEnd;
+            case "saveButton1":
+                return this.saveButton1;
+            case "searchAcademicPeriod":
+                return this.searchAcademicPeriod;
 
         }
 

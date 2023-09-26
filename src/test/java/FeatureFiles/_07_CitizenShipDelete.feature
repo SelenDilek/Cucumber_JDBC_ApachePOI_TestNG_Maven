@@ -20,14 +20,17 @@ Feature: CitizenShip Functionality
     When Create a Citizenship name as "<name>" short name as "<shortname>"
     Then Already exist message should be displayed
 
-    #bu adimi _05_CitizenShip class icine olustrduk orayla baglantili
+    #bu adimi _05_CitizenShip class icine olustrduk orayla baglantili (string gonderiyoruz)
     When User delete the "<name>"
     Then Success message should be display
 
     Examples:
-      | name  | shortname |
-      | k012ksss | k012ksss|
+      | name       | shortname  |
+      | k12ksss14 | k12ksss14 |
+      | k12ksss141 | k12ksss141 |
 
+
+  #her bir testi bastan calistirir.
 
 #esc,stale element, loading (numberofchield) , parentta public wait , delete komutu ise her yerde ortak parent e aldik.silme islemi
 

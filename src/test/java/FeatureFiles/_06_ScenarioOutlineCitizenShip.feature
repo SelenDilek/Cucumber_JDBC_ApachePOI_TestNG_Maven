@@ -12,20 +12,20 @@ Feature: CitizenShip Functionality
     Then User should login successfully
     And Navigate to citizenship
 
-    #dataProvider gibi
-    Scenario Outline: Create a Citizenship
-      When Create a Citizenship name as "<name>" short name as "<shortname>"
-      Then Success message should be display
+    #dataProvider gibi (birden cok test yapmak icin lazim. TestNg gibi.)
+  Scenario Outline: Create a Citizenship
+    When Create a Citizenship name as "<name>" short name as "<shortname>"
+    Then Success message should be display
 
-      When Create a Citizenship name as "<name>" short name as "<shortname>"
-      Then Already exist message should be displayed
+    When Create a Citizenship name as "<name>" short name as "<shortname>"
+    Then Already exist message should be displayed
 
-      Examples:
-        | name | shortname |
-        | ssslnnn1a | ssslnnn1a |
-        | ssslnnn2a | ssslnnn2a |
-        | ssslnnn3a | ssslnnn3a |
-        | ssslnnn4a | ssslnnn4a |
-        | ssslnnn5a | ssslnnn5a |
+    Examples:
+      | name       | shortname  |
+      | ssslnnn1aa | ssslnnn1aa |
+      | ssslnnn2aa | ssslnnn2aa |
+      | ssslnnn3aa | ssslnnn3aa |
+      | ssslnnn4aa | ssslnnn4aa |
+      | ssslnnn5aa | ssslnnn5aa |
 
 

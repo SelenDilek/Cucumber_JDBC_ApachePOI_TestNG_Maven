@@ -3,6 +3,9 @@ package StepDefinitions;
 import Utilities.GWD;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
 //Ben testNG değilim onun kadar Annotation yok
@@ -21,7 +24,18 @@ public class Hooks {
     }
 
     @After
-    public void after(){
+    public void after(Scenario scenario){
+
+        if(scenario.isFailed()){
+            //bytes baska bir doysyaya veya database e eklemek istersem sececegim kisim.
+            TakesScreenshot ts = ((TakesScreenshot) GWD.getDriver());
+            byte[]  hafizadakiHali = ts.getScreenshotAs(OutputType.BYTES);
+            //onceden dosyaya yaziyorduk simdi baska file e dosyaya ekleyecez. O yuzden Outputype byte yaptik.(byte olunca kendi icine gomebiliyor
+            // dosyanin icine istedigimiz)
+            scenario.attach(hafizadakiHali,"image/png","screenshot name");
+
+
+        }
 
         System.out.println("Senorya bitti : ?");
         //dogru calisirsa burada quiti cagiracam.

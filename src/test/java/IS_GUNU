@@ -1,0 +1,51 @@
+Takım kimlerden oluşuyor
+
+
+takım lead-scrum master
+4-5 developerlar-lead
+4-5 tester-lead
+
+BA -> iş alıp anlayıp, anlatan
+BU -> iş veren, sahibi
+PO -> intertech GMY -> 10 takım bağlıydı
+Yazılım Mimarı
+
+-> tester-> test lead -> yönetici -> sistem analizci,
+
+-> ilk işe girişte
+    yetki, email açılması,remsi işler (1 ay)
+    bilgi aktarımı, KT
+    2-3 ay sonra sizden iş bekliyorular
+
+    ORTAMLAR bilgisayar düzenleri
+
+    DEV Ortamı : developerların geliştirme yaptığı ortam
+    TEST Ortamı : developer bitirince , buraya atıyor geliştirmeyi
+    test1, test2, test3
+
+    UAT ortamı : testi geçenler buraya atılıyor, BU test ediyor
+
+    PROD ortamı : UAT yi geçnler buraya atılıyor.
+
+--> Bir günüm nasıl geçiyor
+    Sprintle başlıyor :
+
+    puaçamızı aldık yola,
+    1- emaillerler kontrol edilmeli. mail kutunuz ayarlamak olmalı.
+    2- geceden çalışıpda biten testler kontrol ediliyor.
+    3- 9:15 Günlük toplantı : dün ne yaptın, bugün ne yapacağım ?
+       bir engel var, yardıma ihtiyaç,
+    4- developer rişini bitridi test ortamına attı
+       defect : hemen task jiradan assign developera
+       ekran görüntüsünü alıyorsun
+       şu kullanıcı ile girdim,şu adımları izledim, ve şu ahat gözüktü
+       kanıt(evidance) ektedir.
+
+       Scrum master , developera dönüyor, kendi testlerini iyi yap
+
+       manuel testing geçerse, bunu atomation a ekliyorsun.
+
+       iş ortamındaki davranışlarımız ve işi sahiplenmemiz çok önemli
+
+    5- sprint review -> bütün yapılanlar gösteriliyor.
+    6- sprint retrospective -> iş akışlarını iyileştirme

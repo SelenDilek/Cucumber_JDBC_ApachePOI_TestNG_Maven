@@ -6,16 +6,16 @@ Feature: DataTable ornek
 
     #bir parametreye coklu veri gonderme --> parameters gibi testNgdeki
     And Write usurname as DataTable
-      | selen  |
-      | mehmet |
-      | ayse   |
-      | fatma  |
+      | selenn  |
+      | mehmetn |
+      | aysen   |
+      | fatman  |
 
     And Write usurname and Password as DataTable
-      | selen  | 1234  |
-      | mehmet | 23323 |
-      | ayse   | 45454 |
-      | fatma  | 44545 |
+      | selenn  | 1234n  |
+      | mehmetn | 23323n |
+      | aysen   | 45454n |
+      | fatman  | 44545n |
 
     #dataProvider (testNg icin) ScenarioOutline (cucumber) : gorevi verilen her deger , tum senorya calistirma
   #dataTable ise , bir stepe , çok parametre vermemizi sağlıyor
