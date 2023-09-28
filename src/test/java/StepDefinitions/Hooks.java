@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Utilities.ExcelUtility;
 import Utilities.GWD;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -26,6 +27,9 @@ public class Hooks {
     @After
     public void after(Scenario scenario){
 
+        ExcelUtility.writeToExcel("src/test/java/ApachePOI/resource/SenaryoSonuclari3.xlsx",scenario); //excele sonucu yazdiracaz.
+
+        //scenario sonucu burda.
         if(scenario.isFailed()){
             //bytes baska bir doysyaya veya database e eklemek istersem sececegim kisim.
             TakesScreenshot ts = ((TakesScreenshot) GWD.getDriver());
