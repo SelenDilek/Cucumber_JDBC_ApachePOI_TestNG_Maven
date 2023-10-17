@@ -79,7 +79,7 @@ public class ExcelUtility {
             try {
                 inputStream = new FileInputStream(path);
                 workbook = WorkbookFactory.create(inputStream); //hafizaya create et
-                sheet = workbook.getSheetAt(0);
+                sheet = workbook.getSheetAt(0); //getAt index ister
             } catch (Exception ex) {
                 System.out.println("ex.getMessage() = " + ex.getMessage());
             }
@@ -96,7 +96,7 @@ public class ExcelUtility {
 
 
             try {
-                inputStream.close();
+                inputStream.close(); //input stream i kapatiyoruz.
                 FileOutputStream outputStream = new FileOutputStream(path);
                 workbook.write(outputStream);
                 workbook.close();

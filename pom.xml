@@ -75,6 +75,8 @@
             <version>1.9.2</version>
         </dependency>
 
+        <!--  excel islemleri icin iki tane dependicy kullaniliyor-->
+
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
@@ -86,6 +88,15 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>4.1.0</version>
+        </dependency>
+
+
+        <!-- JDBC - MySql için eklendi -->
+        <!-- Excelde apachePOI JDBC de bu connector i ekledik  -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
         </dependency>
 
 

@@ -14,8 +14,7 @@ public class _13_ApachePOISteps {
     public void userCreateCitizenshipWithApahcePOI() {
         //excelden getData ile oku bilgiyi ve sonra bir for dongusu ile kaydet
 
-        ArrayList<ArrayList<String>> tablo = new ArrayList<>();
-        ExcelUtility.getData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx","testCitizen",2);
+ArrayList<ArrayList<String>> tablo=ExcelUtility.getData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx","testCitizen",2);
 
         for(ArrayList<String> satir : tablo){
 
@@ -32,8 +31,7 @@ public class _13_ApachePOISteps {
     public void userDeleteCitizenshipWithApachePOI() {
         //excelden oku bilgiyi getData ile bir dongu ile hepsini sil (yukariyi aynen al ve sil)
 
-        ArrayList<ArrayList<String>> tablo = new ArrayList<>();
-        ExcelUtility.getData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx","testCitizen",2);
+ ArrayList<ArrayList<String>> tablo =ExcelUtility.getData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx","testCitizen",2);
 
         for(ArrayList<String> satir : tablo){
 

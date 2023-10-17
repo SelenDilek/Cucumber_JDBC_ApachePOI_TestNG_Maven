@@ -1,0 +1,16 @@
+bir sorgunun calismasi icin yapilanlar :
+1- baglanti bilgilerini girdik once connection bilgileri set edildi, ayarlandi
+2. db sectik sakila mesela (set as default shema)
+3. sorgu ekrani acildi
+4- sorguyu yazdim ve calistirdim
+5- altta sonuclar gozuktu
+
+JDBC Nedir ?
+Veritabanını automation yapmama yardımcı olan kütüphanedir.
+Sorgularımı gönderiyorum, gelen sonuçlarla , web deki sonuçları
+karşılaştırıyorum.
+
+JDBC yi nasıl kullanırsın ?
+URL, username, password vererek bir Connection oluştururum.
+Bu connection üzerinden sorgularımı çalıştıracağım "statement"
+oluştururum. Sorgularımı çalıştırıp, sonuçları yani ResulSet i alırım

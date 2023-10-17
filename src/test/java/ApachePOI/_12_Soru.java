@@ -63,7 +63,7 @@ public class _12_Soru {
             yeniHucre.setCellValue(bilgi);
 
             try {
-                inputStream.close();
+                inputStream.close(); //input Streami kapatip outputstream yazariz. Cunku acma ve kapatma cift yonlu calismaz(two way road)
                 FileOutputStream outputStream = new FileOutputStream(path);
                 workbook.write(outputStream);
                 workbook.close();
