@@ -115,8 +115,10 @@ public class DialogContent extends Parent { //extend Parent yaptik cunku Dialog 
     @FindBy(xpath="//mat-select//span[text()='Test 2024']")
     public WebElement searchAcademicPeriod;
 
+    @FindBy(xpath="//tbody[@role='rowgroup']//tr//td[2]")
+    public List<WebElement> nameList;
 
-
+//
 
 
 
@@ -212,8 +214,8 @@ public class DialogContent extends Parent { //extend Parent yaptik cunku Dialog 
             case "searchAcademicPeriod":
                 return this.searchAcademicPeriod;
 
-        }
 
+        }
 
         return null; // eger ki bir sey gelmezse donus olarak null gonder.
 

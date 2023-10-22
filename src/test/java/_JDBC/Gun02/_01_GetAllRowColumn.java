@@ -143,7 +143,7 @@ public class _01_GetAllRowColumn extends JDBCParent {
 
         return tablo;
     }
-
+// TODO : DB den Customer tablosunu okutarak yeni bir excel e yazdiriniz
 
 
 

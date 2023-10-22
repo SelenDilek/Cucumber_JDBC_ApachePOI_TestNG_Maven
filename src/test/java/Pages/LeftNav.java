@@ -37,6 +37,8 @@ public class LeftNav extends Parent { //campusun sol tarafi
     @FindBy(xpath = "(//span[text()='Setup'])[2]")
     public WebElement setup2;
 
+    @FindBy(xpath="(//*[text()='States'])[1]")
+    public WebElement states;
     //Entrance Exams
     //DataTable icin ben buraya kelime halini yani string yollayacam geriye bana web element gonderecek.
 
@@ -64,6 +66,8 @@ public class LeftNav extends Parent { //campusun sol tarafi
                 return this.entranceExams2;
             case "setup2":
                 return this.setup2;
+            case "states":
+                return this.states;
 
         }
 
