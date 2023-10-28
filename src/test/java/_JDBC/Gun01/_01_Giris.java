@@ -11,6 +11,7 @@ public class _01_Giris {
     public void test1() throws SQLException {
 
 //  bir sorgunun calismasi icin yapilanlar. (nokta atisi baglanti yapiliyor direkt olarak db in kendisine baglaniyoruz)
+       //jdbc:mysql: i biz ekledik sonuna da /sakila yani calisacagimiz tabloyu ekledik
        String hostUrl="jdbc:mysql://db-technostudy.ckr1jisflxpv.us-east-1.rds.amazonaws.com/sakila"; //java ve pomxml sagliyor
        String userName="root";
        String password="'\"-LhCB'.%k[4S]z"; // tek slash i biz koyduk
@@ -52,7 +53,14 @@ public class _01_Giris {
        baglanti.close(); // fileinputstreami kapatma gibi dusun
 
 
+       //2.yol
 
+//       int i =1;
+//       while (sonucTablosu.next()){
+//
+//           System.out.println(sonucTablosu.getNString(2));
+//           i++;
+//       }
 
 
     }
