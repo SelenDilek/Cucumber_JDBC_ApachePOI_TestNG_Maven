@@ -27,24 +27,24 @@ public class Hooks {
     @After
     public void after(Scenario scenario){
 
-        ExcelUtility.writeToExcel("src/test/java/ApachePOI/resource/SenaryoSonuclari3.xlsx",scenario); //excele sonucu yazdiracaz.
+       // ExcelUtility.writeToExcel("src/test/java/ApachePOI/resource/SenaryoSonuclari3.xlsx",scenario); //excele sonucu yazdiracaz.
 
-        //scenario sonucu burda.
-        if(scenario.isFailed()){
-            //bytes baska bir doysyaya veya database e eklemek istersem sececegim kisim.
-            TakesScreenshot ts = ((TakesScreenshot) GWD.getDriver());
-            byte[]  hafizadakiHali = ts.getScreenshotAs(OutputType.BYTES);
-            //onceden dosyaya yaziyorduk simdi baska file e dosyaya ekleyecez. O yuzden Outputype byte yaptik.(byte olunca kendi icine gomebiliyor
-            // dosyanin icine istedigimiz)
-            scenario.attach(hafizadakiHali,"image/png","screenshot name");
-
-
-        }
-
-        System.out.println("Senorya bitti : ?");
+//        //scenario sonucu burda.
+//        if(scenario.isFailed()){
+//            //bytes baska bir doysyaya veya database e eklemek istersem sececegim kisim.
+//            TakesScreenshot ts = ((TakesScreenshot) GWD.getDriver());
+//            byte[]  hafizadakiHali = ts.getScreenshotAs(OutputType.BYTES);
+//            //onceden dosyaya yaziyorduk simdi baska file e dosyaya ekleyecez. O yuzden Outputype byte yaptik.(byte olunca kendi icine gomebiliyor
+//            // dosyanin icine istedigimiz)
+//            scenario.attach(hafizadakiHali,"image/png","screenshot name");
+     //   System.out.println("Senorya bitti : ?");
         //dogru calisirsa burada quiti cagiracam.
 
         GWD.quitDriver();
+        }
+
+
+
     }
 
-}
+

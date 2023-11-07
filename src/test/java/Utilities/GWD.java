@@ -2,6 +2,7 @@ package Utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -53,7 +54,12 @@ public class GWD {
                     break;
 
                 default:
-                    threadDriver.set(new ChromeDriver());
+                    //Jenkins için Chrome memory maximize
+//                    ChromeOptions options = new ChromeOptions();
+//                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+//                    threadDriver.set(new ChromeDriver(options)); // ilgili threade bir driver set ettim
+                    //threadDriver.set(new ChromeDriver());
+                    threadDriver.set(new FirefoxDriver());
 
                     //javanin bir eksikligi var:switch icine null geldigi zaman default e gonderemiyor napacagini bilmiyor null
                     //kontrolu konulur.en ustte if else ile :
