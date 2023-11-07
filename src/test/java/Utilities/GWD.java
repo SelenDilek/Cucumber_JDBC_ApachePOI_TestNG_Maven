@@ -56,13 +56,22 @@ public class GWD {
 
                 default:
                     //Jenkins için Chrome memory maximize
-                    FirefoxOptions options=new FirefoxOptions();
-                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                    threadDriver.set(new FirefoxDriver(options));
-                    threadDriver.set(new FirefoxDriver());
+                    if(isRunningOnJenkins()) {
+                        FirefoxOptions options = new FirefoxOptions();
+                        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                        threadDriver.set(new FirefoxDriver(options));
+                    }
+                    else
+                    { threadDriver.set(new ChromeDriver());}
+
+ //                   EdgeOptions eOptions=new EdgeOptions();
+//                    eOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+//                    threadDriver.set(new EdgeDriver(eOptions));
                     //threadDriver.set(new ChromeDriver()); // ilgili threade bir driver set ettim
                     //javanin bir eksikligi var:switch icine null geldigi zaman default e gonderemiyor napacagini bilmiyor null
                     //kontrolu konulur.en ustte if else ile :
+
+
 
             }
         }
@@ -97,6 +106,11 @@ public class GWD {
 
 
         }
+    }
+
+    public static boolean isRunningOnJenkins() {
+        String jenkinsHome = System.getenv("JENKINS_HOME");
+        return jenkinsHome != null && !jenkinsHome.isEmpty();
     }
 
 }
