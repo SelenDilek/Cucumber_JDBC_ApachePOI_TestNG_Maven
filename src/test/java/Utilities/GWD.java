@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -55,12 +56,11 @@ public class GWD {
 
                 default:
                     //Jenkins için Chrome memory maximize
-//                    ChromeOptions options = new ChromeOptions();
-//                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-//                    threadDriver.set(new ChromeDriver(options)); // ilgili threade bir driver set ettim
-                    //threadDriver.set(new ChromeDriver());
+                    FirefoxOptions options=new FirefoxOptions();
+                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                    threadDriver.set(new FirefoxDriver(options));
                     threadDriver.set(new FirefoxDriver());
-
+                    //threadDriver.set(new ChromeDriver()); // ilgili threade bir driver set ettim
                     //javanin bir eksikligi var:switch icine null geldigi zaman default e gonderemiyor napacagini bilmiyor null
                     //kontrolu konulur.en ustte if else ile :
 
