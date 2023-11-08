@@ -56,12 +56,12 @@ public class GWD {
 
                 default:
                     //Jenkins için Chrome memory maximize
-                    if(isRunningOnJenkins()) {
+                    if(isRunningOnJenkins()) { //eger jenkins calisiyorsa bunu calistir
                         FirefoxOptions options = new FirefoxOptions();
                         options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
                         threadDriver.set(new FirefoxDriver(options));
                     }
-                    else
+                    else //jenkins calismiyorsa intellij calistir
                     { threadDriver.set(new ChromeDriver());}
 
  //                   EdgeOptions eOptions=new EdgeOptions();
