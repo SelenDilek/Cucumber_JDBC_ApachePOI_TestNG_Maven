@@ -18,7 +18,6 @@ import org.testng.annotations.AfterClass;
 public class _07_TestRunnerExtendReport extends AbstractTestNGCucumberTests {
     //not:kim ne zaman hangi isletim sisteminde yapmis bu test calistiktan sonra bilgisini alacagimiz kisim oldugu icin
     //buraya ekledik.
-
     @AfterClass //testNg kullandik cucumber ile testNg beraber calisiyor.
     public static void writeExtendReport(){
         //birinci bolum acilama satiri ikinci bolum bilgisi. (ekstra bilgi ekleme bolumu)
@@ -27,7 +26,7 @@ public class _07_TestRunnerExtendReport extends AbstractTestNGCucumberTests {
         //sistemden kullanici adi alinabilir.
         ExtentService.getInstance().setSystemInfo("Time Zone", System.getProperty("user.timezone"));
         ExtentService.getInstance().setSystemInfo("User Name", "Selen Dilek");
-        ExtentService.getInstance().setSystemInfo("Application Name", "Campus");
+        ExtentService.getInstance().setSystemInfo("Application Name", "Campus LMS");
         ExtentService.getInstance().setSystemInfo("Operating System Info", System.getProperty("os.name"));
         ExtentService.getInstance().setSystemInfo("Department", "QA");
         ExtentService.getInstance().setSystemInfo("Ek Satır", "Açıklama");
