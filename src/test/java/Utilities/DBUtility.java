@@ -21,6 +21,7 @@ public class DBUtility {
             ResultSet rs = statement.executeQuery(sql);
             ResultSetMetaData rsmd = rs.getMetaData();
 
+
             while (rs.next()) {
                 List<String> rowList = new ArrayList<>();
                 for (int i = 1; i <= rsmd.getColumnCount(); i++) {

@@ -15,12 +15,12 @@ public class _02_Giris extends JDBCParent {
         sonuc.next(); //satir verir
 
         System.out.println(sonuc.getString("first_name")); // sutun verir
-        System.out.println(sonuc.getString("last_name"));
-
-        sonuc.next(); // bir sonraki satiri verir
-
-        System.out.println(sonuc.getString("first_name"));
-        System.out.println(sonuc.getString("last_name"));
+//        System.out.println(sonuc.getString("last_name"));
+//
+//        sonuc.next(); // bir sonraki satiri verir
+//
+//        System.out.println(sonuc.getString("first_name"));
+//        System.out.println(sonuc.getString("last_name"));
 
 
 

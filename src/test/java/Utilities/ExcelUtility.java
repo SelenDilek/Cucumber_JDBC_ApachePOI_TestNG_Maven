@@ -13,11 +13,10 @@ import java.util.ArrayList;
 
 public class ExcelUtility {
 
-    //not : bunu her yerde kullanacagim icin try catch e aldim.
-    public static  ArrayList<ArrayList<String>> getData(String path, String sheetName, int sutunSayisi) {
+    public static  ArrayList<ArrayList<String>> getData(String path, String sheetName, int columnNumber) {
 
-        ArrayList<ArrayList<String>> tablo = new ArrayList<>(); //satirlarin listesi gerekiyor bana. her satir kendi icinde
-        //bir list o yuzden listin listi oluyor
+        ArrayList<ArrayList<String>> tablo = new ArrayList<>();
+
         Sheet sheet=null;
         try {
             FileInputStream inputStream = new FileInputStream(path);
@@ -29,9 +28,9 @@ public class ExcelUtility {
 
         //bir rowdaki iki satiri oku
 
-        for (int i = 0; i <sheet.getPhysicalNumberOfRows() ; i++) { //her bir satiri //buraya satir sayisi yazilir
+        for (int i = 0; i <sheet.getPhysicalNumberOfRows() ; i++) {
             ArrayList<String> satir = new ArrayList<>();
-            for (int j = 0; j <sutunSayisi ; j++) { //buraya sutun sayisi yazilir(zaten bize sutun sayisini vermis)
+            for (int j = 0; j <columnNumber ; j++) {
                 satir.add(sheet.getRow(i).getCell(j).toString());
 
             }
@@ -43,17 +42,16 @@ public class ExcelUtility {
     }
 
 
-    public static void writeToExcel(String path, Scenario scenario) {
+    public static void writeToExcel(String path, Scenario scenario) { //if test case failed  write to the result on excel
 
         File file = new File(path);
 
-        if (!file.exists()) // dosya yok ise(ilk kez ve bi kez calisiyor)
+        if (!file.exists())
         {
-            //hafzada worbook oluştur, içinde hafızada sheet oluştur
             XSSFWorkbook workbook = new XSSFWorkbook();
             XSSFSheet sheet = workbook.createSheet("Sayfa1");
 
-            //hafızada işlemlerini yap
+
             Row yeniSatir = sheet.createRow(0);
             Cell hucre = yeniSatir.createCell(0);
             hucre.setCellValue(scenario.getName());
@@ -61,7 +59,6 @@ public class ExcelUtility {
             Cell hucre1 = yeniSatir.createCell(1);
             hucre1.setCellValue(scenario.getStatus().toString());
 
-            //kaydet
             try {
                 FileOutputStream outputStream = new FileOutputStream(path);
                 workbook.write(outputStream);
@@ -84,10 +81,10 @@ public class ExcelUtility {
                 System.out.println("ex.getMessage() = " + ex.getMessage());
             }
 
-            int sonSatirIndex = sheet.getPhysicalNumberOfRows(); //son bos satirinn indexi
+            int sonSatirIndex = sheet.getPhysicalNumberOfRows();
             Row yeniSatir = sheet.createRow(sonSatirIndex);
 
-           //testin fail olup olmadigi icin yazdirma kismi (Hook class dan yardim aldim)
+
             Cell hucre = yeniSatir.createCell(0);
             hucre.setCellValue(scenario.getName());
 

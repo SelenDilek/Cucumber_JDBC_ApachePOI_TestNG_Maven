@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.Locale;
 
+//parallel testing
 public class GWD {
     //paralel test icin her cagiran bundan bir tane alacak static i coklayacak.
     private static ThreadLocal<WebDriver> threadDriver= new ThreadLocal<>(); //static private yazdik ki herkes burdan ayni seyi kullansin ve getile erisebilsin degismesin

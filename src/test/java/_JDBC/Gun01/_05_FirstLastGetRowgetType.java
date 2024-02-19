@@ -14,14 +14,14 @@ public class _05_FirstLastGetRowgetType extends JDBCParent{
         rs.last(); // son satira gider
         System.out.println("son satirin sehir adi= " + rs.getString(1));
 
-        rs.first(); // ilk satira gider
-        System.out.println("Ilk satirin sehir adi= " + rs.getString(1));
-
-        rs.last(); //son satira gider
-
-        int kacinciSatirdayim = rs.getRow(); // kacinci satirdayim satir numarasini al
-        System.out.println("kacinciSatirdayim = " + kacinciSatirdayim);
-
+//        rs.first(); // ilk satira gider
+//        System.out.println("Ilk satirin sehir adi= " + rs.getString(1));
+//
+//        rs.last(); //son satira gider
+//
+//        int kacinciSatirdayim = rs.getRow(); // kacinci satirdayim satir numarasini al
+//        System.out.println("kacinciSatirdayim = " + kacinciSatirdayim);
+//
 
 
 
